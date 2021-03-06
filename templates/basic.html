@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cross-poker</title>
+
+    <style type="text/css">
+        table{ margin:0; }
+        .name{ text-align:center;}
+        th,td{ font-size: 23px; }
+        .cellborder{ border: 1px solid black; }
+        .cardborder{ border: 1px solid #8f8f8f; background:#f8f8f8}
+        #rotate1{ transform: rotate(45deg); }
+        #rotate2{ transform: rotate(-45deg); }
+    </style>
+
+
+</head>
+<body>
+    <center>
+        <br><br>
+    <table border = 0>
+        <tr>
+            <td colspan = 5 align = "center" class = "cellborder"><h1>Cross Poker</h1></td>
+            <td height = 155px class = "cellborder" rowspan = 2><div id="rotate2">{{ result_diagonals[1] }}</div></td>
+        </tr>
+        <tr>
+            <td colspan = 5 bgcolor="#101010" height = 40px align="Center">
+                <table border = 0 width = 300px>
+                    <tr>
+                        <td align = "center" width = 70px><span><a href="" style="color:#ffffff; font-size: 17px;">New Game</a></span></td>
+                        <td align = "center" width = 70px><span><a href="./correctanswer" target="_blank" style="color:#ffffff; font-size: 17px;">Answer Check</span></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </tr>
+        <tr>
+            <td class = "cardborder"><table border = 0><td width = 32px height = 55px align = "center">{{ card[0][0][0] }}<td width = 32 align = "center"><span style = "color: {{ card[5][0] }}">{{ card[0][0][1] }}</span></table>
+            <td class = "cardborder"><table border = 0><td width = 32px height = 55px align = "center">{{ card[0][1][0] }}<td width = 32 align = "center"><span style = "color: {{ card[5][1] }}">{{ card[0][1][1] }}</span></table>
+            <td class = "cardborder"><table border = 0><td width = 32px height = 55px align = "center">{{ card[0][2][0] }}<td width = 32 align = "center"><span style = "color: {{ card[5][2] }}">{{ card[0][2][1] }}</span></table>
+            <td class = "cardborder"><table border = 0><td width = 32px height = 55px align = "center">{{ card[0][3][0] }}<td width = 32 align = "center"><span style = "color: {{ card[5][3] }}">{{ card[0][3][1] }}</span></table>
+            <td class = "cardborder"><table border = 0><td width = 32px height = 55px align = "center">{{ card[0][4][0] }}<td width = 32 align = "center"><span style = "color: {{ card[5][4] }}">{{ card[0][4][1] }}</span></table>
+            <td width = 170px class = "cellborder">&nbsp;{{ result_rows[0] }}</td>
+        </tr>
+        <tr>
+            <td class = "cardborder"><table border = 0><td width = 32px height = 55px align = "center">{{ card[1][0][0] }}<td width = 32 align = "center"><span style = "color: {{ card[6][0] }}">{{ card[1][0][1] }}</span></table>
+            <td class = "cardborder"><table border = 0><td width = 32px height = 55px align = "center">{{ card[1][1][0] }}<td width = 32 align = "center"><span style = "color: {{ card[6][1] }}">{{ card[1][1][1] }}</span></table>
+            <td class = "cardborder"><table border = 0><td width = 32px height = 55px align = "center">{{ card[1][2][0] }}<td width = 32 align = "center"><span style = "color: {{ card[6][2] }}">{{ card[1][2][1] }}</span></table>
+            <td class = "cardborder"><table border = 0><td width = 32px height = 55px align = "center">{{ card[1][3][0] }}<td width = 32 align = "center"><span style = "color: {{ card[6][3] }}">{{ card[1][3][1] }}</span></table>
+            <td class = "cardborder"><table border = 0><td width = 32px height = 55px align = "center">{{ card[1][4][0] }}<td width = 32 align = "center"><span style = "color: {{ card[6][4] }}">{{ card[1][4][1] }}</span></table>
+            <td width = 170px class = "cellborder">&nbsp;{{ result_rows[1] }}</td>
+        </tr>
+        <tr>
+            <td class = "cardborder"><table border = 0><td width = 32px height = 55px align = "center">{{ card[2][0][0] }}<td width = 32 align = "center"><span style = "color: {{ card[7][0] }}">{{ card[2][0][1] }}</span></table>
+            <td class = "cardborder"><table border = 0><td width = 32px height = 55px align = "center">{{ card[2][1][0] }}<td width = 32 align = "center"><span style = "color: {{ card[7][1] }}">{{ card[2][1][1] }}</span></table>
+            <td class = "cardborder"><table border = 0><td width = 32px height = 55px align = "center">{{ card[2][2][0] }}<td width = 32 align = "center"><span style = "color: {{ card[7][2] }}">{{ card[2][2][1] }}</span></table>
+            <td class = "cardborder"><table border = 0><td width = 32px height = 55px align = "center">{{ card[2][3][0] }}<td width = 32 align = "center"><span style = "color: {{ card[7][3] }}">{{ card[2][3][1] }}</span></table>
+            <td class = "cardborder"><table border = 0><td width = 32px height = 55px align = "center">{{ card[2][4][0] }}<td width = 32 align = "center"><span style = "color: {{ card[7][4] }}">{{ card[2][4][1] }}</span></table>
+            <td width = 170px class = "cellborder">&nbsp;{{ result_rows[2] }}</td>
+        </tr>
+        <tr>
+            <td class = "cardborder"><table border = 0><td width = 32px height = 55px align = "center">{{ card[3][0][0] }}<td width = 32 align = "center"><span style = "color: {{ card[8][0] }}">{{ card[3][0][1] }}</span></table>
+            <td class = "cardborder"><table border = 0><td width = 32px height = 55px align = "center">{{ card[3][1][0] }}<td width = 32 align = "center"><span style = "color: {{ card[8][1] }}">{{ card[3][1][1] }}</span></table>
+            <td class = "cardborder"><table border = 0><td width = 32px height = 55px align = "center">{{ card[3][2][0] }}<td width = 32 align = "center"><span style = "color: {{ card[8][2] }}">{{ card[3][2][1] }}</span></table>
+            <td class = "cardborder"><table border = 0><td width = 32px height = 55px align = "center">{{ card[3][3][0] }}<td width = 32 align = "center"><span style = "color: {{ card[8][3] }}">{{ card[3][3][1] }}</span></table>
+            <td class = "cardborder"><table border = 0><td width = 32px height = 55px align = "center">{{ card[3][4][0] }}<td width = 32 align = "center"><span style = "color: {{ card[8][4] }}">{{ card[3][4][1] }}</span></table>
+            <td width = 170px class = "cellborder">&nbsp;{{ result_rows[3] }}</td>
+        </tr>
+        <tr>
+            <td class = "cardborder"><table border = 0><td width = 32px height = 55px align = "center">{{ card[4][0][0] }}<td width = 32 align = "center"><span style = "color: {{ card[9][0] }}">{{ card[4][0][1] }}</span></table>
+            <td class = "cardborder"><table border = 0><td width = 32px height = 55px align = "center">{{ card[4][1][0] }}<td width = 32 align = "center"><span style = "color: {{ card[9][1] }}">{{ card[4][1][1] }}</span></table>
+            <td class = "cardborder"><table border = 0><td width = 32px height = 55px align = "center">{{ card[4][2][0] }}<td width = 32 align = "center"><span style = "color: {{ card[9][2] }}">{{ card[4][2][1] }}</span></table>
+            <td class = "cardborder"><table border = 0><td width = 32px height = 55px align = "center">{{ card[4][3][0] }}<td width = 32 align = "center"><span style = "color: {{ card[9][3] }}">{{ card[4][3][1] }}</span></table>
+            <td class = "cardborder"><table border = 0><td width = 32px height = 55px align = "center">{{ card[4][4][0] }}<td width = 32 align = "center"><span style = "color: {{ card[9][4] }}">{{ card[4][4][1] }}</span></table>
+            <td width = 170px class = "cellborder">&nbsp;{{ result_rows[4] }}</td>
+        </tr>
+        <tr>
+            <td valign = "top" align = "center" height = 155px class = "cellborder"><span style="writing-mode: vertical-lr;">&nbsp;{{ result_columns[0] }}</span></td>
+            <td valign = "top" align = "center" height = 155px class = "cellborder"><span style="writing-mode: vertical-lr;">&nbsp;{{ result_columns[1] }}</span></td>
+            <td valign = "top" align = "center" height = 155px class = "cellborder"><span style="writing-mode: vertical-lr;">&nbsp;{{ result_columns[2] }}</span></td>
+            <td valign = "top" align = "center" height = 155px class = "cellborder"><span style="writing-mode: vertical-lr;">&nbsp;{{ result_columns[3] }}</span></td>
+            <td valign = "top" align = "center" height = 155px class = "cellborder"><span style="writing-mode: vertical-lr;">&nbsp;{{ result_columns[4] }}</span></td>
+            <td class = "cellborder"><div id="rotate1">{{ result_diagonals[0] }}</div></td>
+        </tr>
+        <tr>
+            <td colspan = 6 style = "font-size: 15px; ">트럼프카드에서 8 이상의 카드 28장 중 25장을 골라 배열.
+                <br>각 열과 행, 대각선의 정보를 활용하여 카드 배열을 맞추기!
+            </td>
+        </tr>
+    </table>
+    </center>
+</body>
+</html>
